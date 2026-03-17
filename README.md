@@ -13,7 +13,7 @@ The dataset can be downloaded from the following link: Lytro Illum ([LINK](https
 
 ## Usage
 ### Train
-First download segment anything model [SAM](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth). Run `pseudo_label.py` to generate pseudo_labels with SAM. Then run `train.py` to train the network.
+First download Segment Anything Model ([SAM](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)). Run `pseudo_label.py` to generate pseudo_labels with SAM. Then run `train.py` to train the network.
 ### Test
 Put the trained model in the appropriate folder. Run `test.py` to generate the final prediction map.
 
