@@ -17,4 +17,8 @@ First download Segment Anything Model ([SAM](https://dl.fbaipublicfiles.com/segm
 ### Test
 Put the trained model in the appropriate folder. Run `test.py` to generate the final prediction map.
 
+## Visual Results
+
+<img width="412" height="339" alt="fig6" src="https://github.com/user-attachments/assets/502507aa-b7c1-4997-b2e2-47ba2e929b5e" />
+
 
