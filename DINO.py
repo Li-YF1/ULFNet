@@ -50,13 +50,11 @@ class DINOExtractor(nn.Module):
         feat_w = batch.shape[-1] // self.vit_patch_size
 
         with torch.no_grad():
-
             attentions = self.vit_encoder.get_last_selfattention(batch)
             bs, nb_head, nb_token = attentions.shape[0], attentions.shape[1], attentions.shape[2]
             qkv = (
                 self.hook_features["qkv"]
                 .reshape(bs, nb_token, 3, nb_head, -1)
-                .permute(2, 0, 3, 1, 4)
             )
             q, k, v = qkv[0], qkv[1], qkv[2]
 
