@@ -20,6 +20,6 @@ Put the trained model in the appropriate folder. Run `test.py` to generate the f
 ## Visual Results
 
 
-<img width="952" height="575" alt="fig5" src="https://github.com/user-attachments/assets/c0deea02-3e68-4e0c-81f0-9587bce04ed0" />
+<img width="761" height="460" alt="fig5" src="https://github.com/user-attachments/assets/c0deea02-3e68-4e0c-81f0-9587bce04ed0" />
 
 
