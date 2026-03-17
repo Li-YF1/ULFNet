@@ -50,7 +50,7 @@ class ResizeLongestSide:
         in (H, W) format.
         """
         boxes = self.apply_coords(boxes.reshape(-1, 2, 2), original_size)
-        return boxes.reshape(-1, 4)
+        return boxes
 
     def apply_image_torch(self, image: torch.Tensor) -> torch.Tensor:
         """
@@ -97,6 +97,6 @@ class ResizeLongestSide:
         """
         scale = long_side_length * 1.0 / max(oldh, oldw)
         newh, neww = oldh * scale, oldw * scale
-        neww = int(neww + 0.5)
-        newh = int(newh + 0.5)
+        neww = int(neww )
+        newh = int(newh )
         return (newh, neww)
