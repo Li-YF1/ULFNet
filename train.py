@@ -4,7 +4,6 @@ import cv2
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from tensorboardX import SummaryWriter
 from dataloader import get_trainloader, get_testloader
 from dataloader import test_dataset2
 import numpy as np
@@ -29,7 +28,6 @@ model.cuda()
 params = model.parameters()
 optimizer = torch.optim.Adam(params, lr)
 step = 0
-writer = SummaryWriter(save_path + 'summary')
 best_mae = 1
 best_epoch = 0
 
@@ -48,7 +46,7 @@ def structure_loss(pred, mask):
     union = ((pred + mask) * weit).sum(dim=(2, 3))
     wiou = 1 - (inter + 1) / (union - inter + 1)
 
-    return wbce + wiou
+    return (wbce + wiou)
 
 def trace_loss(confidence, idx, history):
     loss1 = confidence
@@ -122,8 +120,8 @@ if __name__ == '__main__':
     rgb_history = History(len(train_loader.dataset))
     for epo in range(1, epoch):
         train(train_loader, model, optimizer, epo, save_path,total_step,depth_history,rgb_history)
-        ## 依次选择某一部分置信度的样本进行测试，把输出值作为伪标签，更新伪标签文件夹，直到所有训练集被选择
         dataset = ''
+        # if epo==150 or 200 or 250...
         if epo==150:
             hard_label1_root=''
             test_loader = test_dataset2(image_root, hard_label1_root,depth_root, trainsize, dataset)
@@ -135,20 +133,9 @@ if __name__ == '__main__':
                     depth = depth.cuda()
                     res,_,_,_,_ = model.forward_step(image,depth)
                     res = res.sigmoid().data.cpu().numpy().squeeze()
-                    res = (res - res.min()) / (res.max() - res.min() + 1e-8)
-                    cv2.imwrite(os.path.join(pse_root,name),res*255)
+                    cv2.imwrite(os.path.join(pse_root,name),res)
 
-        if epo == 200:
-            "..."
-        if epo == 250:
-            "..."
-        if epo == 300:
-            "..."
-        if epo == 350:
-            "..."
-        if epo == 400:
-            "..."
-
+       
 
 
 
