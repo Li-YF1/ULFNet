@@ -1,9 +1,9 @@
 # Unsupervised Light Field Salient Object Detection Enhanced by Segment Anything Model and Depth Quality-aware Learning
 
-##Data Preparation
-The dataset can be downloaded from the following link: Lytro Illum [LINK](https://github.com/pencilzhang/MAC-light-field-saliency-net), HFUT [LINK](https://github.com/pencilzhang/MAC-light-field-saliency-net), and DUTLF-V2 [LINK](https://github.com/DUT-IIAU-OIP-Lab/DUTLF-V2). 
+## Data Preparation
+The dataset can be downloaded from the following link: Lytro Illum ([LINK])(https://github.com/pencilzhang/MAC-light-field-saliency-net), HFUT [LINK](https://github.com/pencilzhang/MAC-light-field-saliency-net), and DUTLF-V2 [LINK](https://github.com/DUT-IIAU-OIP-Lab/DUTLF-V2). 
 
-##Prerequisites
+## Prerequisites
 - python 3.8
 - pytorch 2.0.1
 - numpy 1.24.4
