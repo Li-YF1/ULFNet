@@ -156,7 +156,6 @@ for dataset in test_datasets:
         root=''
         if not os.path.exists(root):
             os.makedirs(root)
-        name=name.split('.')[0] + '_' + str(score) + '.png'
         path=os.path.join(root, name)
-        cv2.imwrite(path,mask * 255)
+        cv2.imwrite(path,mask)
     print('Test Done!')
